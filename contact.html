@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GoBeyond</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D') no-repeat center center/cover; /* Replace with your image */
+            display: 0;
+            color: white;
+            position: relative;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: white;
+            font-size: 20px;
+            font-family: cursive;
+        }
+
+        .links {
+            display: flex;
+            list-style: none;
+        }
+
+        .links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: rgb(62, 151, 173);
+        }
+
+        .links li {
+            margin: 0 15px;
+        }
+
+        .container {
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            height:calc(100vh-60vh);
+        }
+
+        .form {
+            width:400px;
+            background: rgba(0, 0, 0, 0.6);
+            padding:30px;
+            border-radius:10px;
+        }
+
+        .form h2{
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form input[type="text"],
+        .form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .form textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        .form button {
+            width: 100%;
+            padding: 12px;
+            background: rgb(62, 151, 173);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form button:hover {
+            background: #0056b3;
+        }
+
+        ::placeholder {
+            color: #ccc;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://thumbs.dreamstime.com/b/airplane-plane-icon-isolated-black-background-airplane-plane-icon-isolated-black-background-simple-vector-logo-162761525.jpg" height="60px" width="60px" alt="Logo">
+            <span>GoBeyond</span>
+        </div>
+        <ul class="links">
+            <li><a href="travel_recommendation.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!--contact-->
+    <div class="container">
+        <div class="form">
+            <h2>Contact US</h2>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required><br>
+                <label for="mail">Email</label>
+                <input type="text" id="mail" placeholder="Enter your email" required><br>
+                <label for="message">Message</label>
+                <textarea type="text" id="message" placeholder="Enter your Message" required></textarea><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
