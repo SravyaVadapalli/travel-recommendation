@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GoBeyond</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: white;
+            font-size: 20px;
+            font-family: cursive;
+        }
+
+        .links {
+            display: flex;
+            list-style: none;
+        }
+
+        .links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: rgb(62, 151, 173);
+        }
+
+        .links li {
+            margin: 0 15px;
+        }
+
+        .about {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D') no-repeat center center/cover; /* Replace with your image */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        .about-us {
+            font-weight: bold;
+            padding: 30px;
+            font-size: 40px;
+            margin-top: 20px;
+        }
+
+        .about-p {
+            font-size: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            max-width: 60%;
+            padding: 20px;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .team-section {
+            margin-top: 30px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .team h2 {
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .team {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            width: 200px;
+        }
+
+        .team-member h3 {
+            margin-bottom: 10px;
+        }
+
+        .role {
+            
+            background: #1eb2a6;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://thumbs.dreamstime.com/b/airplane-plane-icon-isolated-black-background-airplane-plane-icon-isolated-black-background-simple-vector-logo-162761525.jpg" height="60px" width="60px" alt="Logo">
+            <span>GoBeyond</span>
+        </div>
+        <ul class="links">
+            <li><a href="travel_recommendation.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="about">
+        <h1 class="about-us">ABOUT US</h1>
+        <div class="about-p">
+            <p>Welcome to Our Company! We are a team of passionate individuals dedicated to providing excellent services/products to our customers. Our mission is to <strong>provide the best experience</strong> for people travelling to different destinations around the world.<br>
+            Our values include integrity, innovation, customer satisfaction, and teamwork. We believe in putting our customers first and working together to achieve our goals.<br>
+            Feel free to explore our website to learn more about what we offer!</p>
+        </div>
+        <div class="team-section">
+            <h2>Our Team</h2>
+            <div class="team">
+                <div class="team-member">
+                    <h3>Sravya Sri</h3>
+                    <p>Responsible for strategic direction, overall company vision, and ensuring long-term success.</p>
+                    <p class="role">CEO</p>
+                </div>
+                <div class="team-member">
+                    <h3>Navyan Chaitanya Raj</h3>
+                    <p>Manages day-to-day operations, implements strategic plans, and ensures operational efficiency.</p>
+                    <p class="role">COO</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
