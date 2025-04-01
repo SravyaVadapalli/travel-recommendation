@@ -1,8 +1,12 @@
 * {
     padding: 0;
     margin: 0;
-
 }
+
+body {
+    font-family: sans-serif; /* Add a default font family */
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -10,7 +14,6 @@
     background-color: black;
     color: white;
     padding: 10px;
-    text-align: justify;
 }
 
 .logo {
@@ -21,7 +24,7 @@
 .logo span {
     color: white;
     font-size: 20px;
-    font-family:cursive;
+    font-family: cursive;
 }
 
 .links {
@@ -52,24 +55,29 @@
     border-radius: 20px;
 }
 
-.search-bar input{
+.search-bar input {
     border: none;
     outline: none;
     padding: 8px;
     width: 200px;
 }
 
-.search-btn, .clear-btn {
+.search-btn,
+.clear-btn {
     color: white;
     background: rgb(62, 151, 173);
-    cursor: pointers;
+    cursor: pointer;
     border: none;
     padding: 8px 12px;
     border-radius: 5px;
     margin-left: 5px;
 }
 
-.home{
+.main-content-container {
+    display: flex; /* Flex container for home and search results */
+}
+
+.home {
     height: 100vh;
     background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D') no-repeat center center/cover;
     display: flex;
@@ -77,11 +85,12 @@
     align-items: center;
     color: white;
     position: relative;
+    flex: 1; /* Home takes remaining space */
 }
 
 .home-content {
     position: absolute;
-    top:15%;
+    top: 15%;
     left: 10%;
     background: rgba(0, 0, 0, 0.199);
     border-radius: 10px;
@@ -94,7 +103,7 @@
     margin-bottom: 10px;
 }
 
-.home p{
+.home p {
     font-size: 1.2em;
     line-height: 1.6;
     margin-bottom: 30px;
@@ -102,10 +111,44 @@
 
 .book {
     border-radius: 5px;
-    background:rgb(62, 151, 173);
-    border-radius: 5px;
+    background: rgb(62, 151, 173);
     border: none;
     color: white;
-    padding:15px 30px;
+    padding: 15px 30px;
+    cursor: pointer;
+}
+
+.search-results-container {
+    width: 300px; /* Adjust width as needed */
+    padding: 20px;
+    background-color: #f0f0f0; /* Optional background color */
+}
+
+.result-card {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.result-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.result-details {
+    flex: 1;
+}
+
+.visit-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
     cursor: pointer;
 }
