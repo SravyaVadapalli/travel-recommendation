@@ -2,11 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.querySelector('.search-bar input');
     const searchButton = document.querySelector('.search-btn');
     const clearButton = document.querySelector('.clear-btn');
-    const homeDiv = document.querySelector('.home');
     const searchResultsContainer = document.querySelector('.search-results-container');
     const searchResultsDiv = document.getElementById('searchResults');
 
-    if (!searchInput || !searchButton || !clearButton || !homeDiv || !searchResultsContainer || !searchResultsDiv) {
+    if (!searchInput || !searchButton || !clearButton || !searchResultsContainer || !searchResultsDiv) {
         console.error('One or more elements not found.');
         return;
     }
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
-            console.log('Fetched Data:', data);
             setupSearch(data);
         })
         .catch(error => {
@@ -28,7 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function setupSearch(data) {
         searchButton.addEventListener('click', () => {
-            const keyword = searchInput.value.toLowerCase();
+            const keyword = searchInput.value.toLowerCase().trim();
+
+            if (keyword === '') {
+                alert('Please enter a destination or keyword.');
+                return;
+            }
+
             let results = [];
 
             if (keyword === 'countries') {
@@ -62,14 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             displayResults(results);
-            homeDiv.style.display = 'none';
             searchResultsContainer.style.display = 'block';
+            searchResultsContainer.scrollIntoView({ behavior: "smooth" });
         });
 
         clearButton.addEventListener('click', () => {
             searchInput.value = '';
-            homeDiv.style.display = 'block';
             searchResultsContainer.style.display = 'none';
+            searchResultsDiv.innerHTML = '';
         });
     }
 
@@ -88,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 resultCard.innerHTML = `
                     <img src="${item.imageUrl}" alt="${item.name}" class="result-image">
                     <div class="result-details">
-                        <h2>${item.name}</h2>
+                        <h3>${item.name}</h3>
                         <p>${item.description}</p>
                         <button class="visit-button">Visit</button>
                     </div>
