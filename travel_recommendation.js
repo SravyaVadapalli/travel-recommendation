@@ -94,12 +94,34 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="result-details">
                         <h3>${item.name}</h3>
                         <p>${item.description}</p>
+                        <p><strong>Local Time:</strong> <span class="local-time" data-timezone="${item.timeZone || 'UTC'}"></span></p>
                         <button class="visit-button">Visit</button>
                     </div>
                 `;
 
                 searchResultsDiv.appendChild(resultCard);
             });
+
+            updateLocalTimes(); // Initial call
+            setInterval(updateLocalTimes, 1000); // Update every second
         }
+    }
+
+    function updateLocalTimes() {
+        const timeElements = document.querySelectorAll('.local-time');
+
+        timeElements.forEach(elem => {
+            const timeZone = elem.getAttribute('data-timezone') || 'UTC';
+            const options = {
+                timeZone: timeZone,
+                hour12: true,
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+            };
+
+            const timeString = new Date().toLocaleTimeString('en-US', options);
+            elem.textContent = timeString;
+        });
     }
 });
